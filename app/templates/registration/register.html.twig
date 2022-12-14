@@ -1,0 +1,28 @@
+{% extends 'home/components/layout.html.twig' %}
+
+{% block title %} Project Kakarot - Registro{% endblock %}
+
+{% block content %}
+    {% for flash_message in app.session.flashbag.get('danger') %}
+        <div class="alert dangerAlert" role="alert">{{ flash_message }}</div>
+    {% endfor %}
+
+    {% for flash_message in app.session.flashbag.get('success') %}
+        <div class="alert dangerSuccess" role="alert">{{ flash_message }}</div>
+    {% endfor %}
+
+    <div class="registerForm">
+        {{ form_start(registrationForm) }}
+        <fieldset>
+            <h2 class="fs-title">¡Crea tu Cuenta!</h2>
+            {{ form_widget(registrationForm.username) }}
+            {{ form_widget(registrationForm.email) }}
+            {{ form_widget(registrationForm.plainPassword )}}
+            <div class="divCheckRegister">{{ form_row(registrationForm.agreeTerms) }}</div>
+
+            <button aria-label="Registrarse" type="submit" class="Btn btnPrimary">REGISTRARSE</button>
+        </fieldset>
+        {{ form_end(registrationForm) }}
+    </div>
+    
+{% endblock %}

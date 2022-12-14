@@ -1,0 +1,16 @@
+{% extends 'home/components/layout.html.twig' %}
+
+{% block title %}Project Kakarot - Cambio de Contraseña{% endblock %}
+
+{% block content %}
+    <div style="margin-bottom:275px;" class="registerForm">
+        {{ form_start(resetForm) }}
+        <fieldset>
+            <h2 class="fs-title">Cambia tu Contraseña</h2>
+            <div class="divResetForm">{{ form_widget(resetForm.plainPassword) }}</div>
+
+            <button aria-label="Enviar cambio de contraseña" class="Btn btnPrimary">ENVIAR CAMBIO DE CONTRASEÑA</button>
+        </fieldset>
+        {{ form_end(resetForm) }}
+    </div>
+{% endblock %}
